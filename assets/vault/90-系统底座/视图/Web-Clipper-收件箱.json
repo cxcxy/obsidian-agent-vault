@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "知识库收件箱",
+  "behavior": "create",
+  "path": "00-收件箱",
+  "noteNameFormat": "{{title}}",
+  "noteContentFormat": "## 收录缘由\n\n\n## 剪藏内容\n\n{{content}}",
+  "properties": [
+    {"name": "日期", "value": "{{date}}", "type": "date"},
+    {"name": "类型", "value": "剪藏", "type": "text"},
+    {"name": "状态", "value": "待整理", "type": "text"},
+    {"name": "来源", "value": "{{url}}", "type": "text"}
+  ],
+  "triggers": []
+}

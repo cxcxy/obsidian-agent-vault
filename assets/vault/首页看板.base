@@ -1,0 +1,21 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - file.inFolder("90-系统底座")
+views:
+  - type: table
+    name: 待整理
+    filters: 'file.inFolder("00-收件箱") || note.状态 == "待整理"'
+    order: [file.name, note.日期, note.类型, note.状态]
+  - type: table
+    name: 进行中
+    filters: 'file.inFolder("10-进行中")'
+    order: [file.name, note.日期, note.类型, note.状态]
+  - type: table
+    name: 待复查
+    filters:
+      and:
+        - 'note.状态 == "待确认" || note.状态 == "待复查"'
+        - '!file.inFolder("80-已归档")'
+    order: [file.name, note.状态, note.复查日期]
